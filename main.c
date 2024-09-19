@@ -180,7 +180,7 @@ Token div_func(Token args[], int size) {
     } else
       result /= atoi(args[i].value);
   }
-  tok.type = INT; 
+  tok.type = FLOAT; 
   sprintf(res, "%f", result);
   strcpy(tok.value, res);
   return tok;
@@ -350,6 +350,7 @@ void repl(){
     printf("%s\n", tok.value);
     if(debug)
       tok_dump(tok);
+    free(code);
   }
 
 }
